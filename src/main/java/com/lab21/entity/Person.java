@@ -1,4 +1,4 @@
-package com.lab21.Lab21Demo;
+package com.lab21.entity;
 
 import org.springframework.stereotype.Component;
 

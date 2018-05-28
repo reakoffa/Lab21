@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Our products</title>
 </head>
 <body>
-<h1>Welcome, ${person} to the most amazing virtual coffee experience of your life</h1> 
-
+<c:forEach items="${item}" var="items">
+    ${item}<br>
+</c:forEach>
 </body>
 </html>

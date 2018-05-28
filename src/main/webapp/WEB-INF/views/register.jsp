@@ -7,9 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="/welcomeuser">
-		First Name: <input type="text" name="fName"> <br><br> Last Name: <input
-			type="text" name="lName"> <input type="submit" value="Submit">
+	<form action="/successful">
+		First Name: <input type="text" name="fName"> <br>
+		<br>
+		Last Name: <input type="text" name="lName">
+		<input type="submit" value="Submit">
 	</form>
 
 </body>
