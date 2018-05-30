@@ -44,4 +44,9 @@ public class items implements Serializable {
 	public items() {
 		super();
 	}
+	@Override
+	public String toString() {
+		return "items [name=" + name + ", description=" + description + ", quantity=" + quantity + ", price=" + price
+				+ "]";
+	}
 }

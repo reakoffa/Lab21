@@ -9,6 +9,6 @@
 <body>
 	<h1>Welcome to lab 21, where we can meet all your coffee needs!</h1>
 	<a href="/register">Register</a> <br>
-	<a href="/products">View products</a>
+	<a href="/login">Log in</a>
 </body>
 </html>

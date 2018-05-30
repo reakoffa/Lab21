@@ -5,23 +5,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class Person {
 	
-	public Person(String firstName, String lastName) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-
-
+	private String userName;
 	private String firstName;
 	private String lastName;
+	private String password;
+	private String email;
 	
-	
-	public Person() {
-		firstName = "";
-		lastName = "";
+	public String getUserName() {
+		return userName;
 	}
-	
-	
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
@@ -34,13 +29,37 @@ public class Person {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-
-
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Person(String userName, String firstName, String lastName, String password, String email) {
+		super();
+		this.userName = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.password = password;
+		this.email = email;
+	}
+	public Person() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@Override
 	public String toString() {
-		return "Person [firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Person [userName=" + userName + ", firstName=" + firstName + ", lastName=" + lastName + ", password="
+				+ password + ", email=" + email + "]";
 	}
 	
 	
+
 }
 

@@ -30,11 +30,21 @@ public class HomeController {
 	}
 	
 	@RequestMapping("/successful")
-	public ModelAndView formTest(@RequestParam("fName") String firstName, @RequestParam("lName") String lastName) {
-		Person p = new Person(firstName, lastName);
+	public ModelAndView formTest(@RequestParam("uName") String userName, @RequestParam("fName") String firstName, @RequestParam("lName") String lastName,
+			@RequestParam("password") String password, @RequestParam("email") String email) {
+		Person p = new Person(userName, firstName, lastName, password, email);
 		userDao.addUser(p);
 		
-		return new ModelAndView("successful", "person", p.getFirstName());
+		return new ModelAndView("successful", "person", p);
+	}
+	@RequestMapping("/loggedin") 
+	public ModelAndView login(@RequestParam("uName") String username, @RequestParam("password") String password) {
+		boolean b = userDao.checkUser(username, password);
+		if (b == true) {
+			return new ModelAndView("congrats");
+		} else {
+			return new ModelAndView("fail");
+		}
 	}
 	
 	@RequestMapping("/products") 
@@ -42,6 +52,11 @@ public class HomeController {
 		List<items> items = userDao.findAll();
 		
 		return new ModelAndView("items", "item", items);
+	}
+	@RequestMapping("/login") 
+	public ModelAndView login() {
+		
+		return new ModelAndView("login");
 	}
 	
 }

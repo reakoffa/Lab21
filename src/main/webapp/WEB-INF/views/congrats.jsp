@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Thank you for registering, ${person.firstName}!</h1>
-<br>
-<a href="/">Return to main site</a> 
-
+<h1>Login is successful</h1>
+<a href="/products">View products</a><br><br>
+<a href="/">Log out</a>
 </body>
 </html>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 
 import com.lab21.entity.Person;
@@ -22,9 +23,23 @@ public class userDao {
 	}
 	
 	public void addUser(Person p) {
-		String sql = "INSERT INTO users (fname, lname) VALUES (?, ?)";
+		String sql = "INSERT INTO users (username, fname, lname, password, email) VALUES (?, ?, ?, ?, ?)";
 
-		jdbcTemplate.update(sql, p.getFirstName(), p.getLastName());
+		jdbcTemplate.update(sql, p.getUserName(), p.getFirstName(), p.getLastName(), p.getPassword(), p.getEmail());
+	}
+	
+	public boolean checkUser(String uname, String pass) {
+		String sql = "SELECT * FROM users WHERE username=? AND password=?";
+		SqlRowSet row = jdbcTemplate.queryForRowSet(sql, uname, pass);
+		
+		if (row.first()) {
+			return true;
+		} else {
+			return false;
+		}
+		
+		
+		
 	}
 
 

@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Thank you for registering, ${person.firstName}!</h1>
-<br>
-<a href="/">Return to main site</a> 
+<h1>If you fail to plan then you plan to fail. </h1><a href="/">Try again.</a>
+
 
 </body>
 </html>

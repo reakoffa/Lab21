@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,9 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Thank you for registering, ${person.firstName}!</h1>
-<br>
-<a href="/">Return to main site</a> 
+
+	<form name="RegForm" action="/loggedin"
+		onsubmit="return regValidation()" method="post">
+		Username: <input type="text" name="uName"> <br> <br>
+		Password: <input type="text" name="password"> <br> <br>
+		<input type="submit" value="Submit">
+	</form>
 
 </body>
 </html>
