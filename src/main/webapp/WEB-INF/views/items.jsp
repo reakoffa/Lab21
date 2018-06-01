@@ -27,14 +27,25 @@
 			<tbody>
 				<c:forEach var="item" items="${item}">
 					<tr>
-						<td>${item.name}</a></td>
+						<td>${item.name}</td>
 						<td>${item.description}</td>
 						<td>${item.quantity}</td>
-						<td>$${item.price}</a></a>
+						<td>$${item.price}</td>
+						<td><a href="delete?name=${item.name}">delete</a></td>
+						<td><a href="update?name=${item.name}">update</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
+	<h1>Add item to menu</h1>
+		<form name="addItem" action="/update/form" onsubmit="return regValidation()" method="post">
+		<br> Name: <input type="text" name="name"> <br>
+		<br> Description: <input type="text" name="description"> <br>
+		<br> Quantity: <input type="text" name="quantity"> <br>
+		<br> Price: <input type="text" name="price"> <br>
+		<br> 
+		<input type="submit" value="Submit">
+	</form>
 </body>
 </html>

@@ -1,11 +1,20 @@
-package com.lab21.entity;
+package com.lab21.Lab21Demo.entity;
 
 import java.io.Serializable;
 
-public class items implements Serializable {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+
+@Entity
+@NamedQuery(name = "find_all_items", query= "select i from Items i")
+public class Items implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue
 	private String name;
 	private String description;
 	private int quantity;
@@ -34,14 +43,14 @@ public class items implements Serializable {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public items(String name, String description, int quantity, double price) {
+	public Items(String name, String description, int quantity, double price) {
 		super();
 		this.name = name;
 		this.description = description;
 		this.quantity = quantity;
 		this.price = price;
 	}
-	public items() {
+	public Items() {
 		super();
 	}
 	@Override

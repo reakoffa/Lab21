@@ -8,8 +8,7 @@
 </head>
 <body>
 
-	<form name="RegForm" action="/loggedin"
-		onsubmit="return regValidation()" method="post">
+	<form name="RegForm" action="/loggedin" method="post">
 		Username: <input type="text" name="uName"> <br> <br>
 		Password: <input type="text" name="password"> <br> <br>
 		<input type="submit" value="Submit">

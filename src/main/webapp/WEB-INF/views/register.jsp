@@ -50,7 +50,7 @@
 		if (password.value == "") {
 			window.alert("Please enter your password");
 			password.focus();
-			return flase;
+			return false;
 		}
 
 		return true;

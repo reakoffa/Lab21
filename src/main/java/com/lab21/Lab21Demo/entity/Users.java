@@ -1,14 +1,26 @@
-package com.lab21.entity;
+package com.lab21.Lab21Demo.entity;
 
-import org.springframework.stereotype.Component;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
-@Component
-public class Person {
+
+
+@Entity
+public class Users {
 	
+	@Id
+	@GeneratedValue
+	@Column(name="username")
 	private String userName;
+	@Column(name="fname")
 	private String firstName;
+	@Column(name="lname")
 	private String lastName;
+	@Column(name="password")
 	private String password;
+	@Column(name="email")
 	private String email;
 	
 	public String getUserName() {
@@ -41,7 +53,7 @@ public class Person {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Person(String userName, String firstName, String lastName, String password, String email) {
+	public Users(String userName, String firstName, String lastName, String password, String email) {
 		super();
 		this.userName = userName;
 		this.firstName = firstName;
@@ -49,7 +61,7 @@ public class Person {
 		this.password = password;
 		this.email = email;
 	}
-	public Person() {
+	public Users() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
